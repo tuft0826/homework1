@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="vie">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="Homework Blog"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>13 quy ước cần thiết để viết "clean code"</title>
+    <link
+      rel="shortcut icon"
+      href="https://yt3.ggpht.com/ytc/AAUvwnijloyrLcdjDzhlvkFRwPNkE6GfLlA_qC487ylV=s900-c-k-c0x00ffffff-no-rj"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <h1>13 quy ước cần thiết để viết “clean code”</h1>
+    <p>26 tháng 05, 2021</p>
+    <p>
+      <a
+        href="https://techmaster.vn/posts?keyword=&category=bu2n7470k7qmfi2josn0"
+        >Frontend</a
+      >
+      <a href="https://techmaster.vn/posts?keyword=&category=568">Javascript</a>
+    </p>
+    <p>
+      Viết clean code không phải là một việc dễ dàng, và cần thời gian để luyện
+      tập, clean code ban đầu tuy mất thời gian hơn nhưng sẽ giúp chúng ta tiết
+      kiệm thời gian để đọc code sau này, giúp việc cải tiến và mở rộng dự án
+      trở nên nhanh chóng, dễ dàng hơn. Trong bài viết này chúng ta sẽ thảo luận
+      về một số quy ước cần tuân theo để viết clean code.
+    </p>
+    <p><strong>Lợi ích của việc tuân theo "clean code"</strong></p>
+    <ul>
+      <li>Code "sạch" hơn(clean code)</li>
+      <li>Code chất lượng hơn</li>
+      <li>Code dễ đọc hơn</li>
+      <li>Bảo trì code dễ dàng hơn</li>
+    </ul>
+    <p>
+      <i
+        >“Clean code rất đơn giản và trực tiếp. Clean code cũng giống như một
+        bài văn xuôi được viết mạch lạc. Clean code không làm cho ý tưởng của
+        lập trình viên trở nên khó hiểu mà thay vào đó, nó là những dòng lệnh cụ
+        thể, làm cho những nội dung trừu tượng trở nên rõ ràng, dễ hiểu hơn.” —
+        Robert C. Martin
+      </i>
+    </p>
+    <h2>1. Magic Numbers</h2>
+    <p>
+      Magic number có nghĩa là chúng ta đang gán một con số mà không có ý nghĩa
+      rõ ràng. Đôi khi chúng ta sử dụng một giá trị cho một mục đích cụ thể, và
+      chúng ta không gán giá trị đó cho một biến có ý nghĩa. Vấn đề xảy ra là
+      sau đó có người làm việc với code của bạn, họ không biết được ý nghĩa của
+      giá trị trực tiếp đó.
+    </p>
+    <h2>2. Tránh dùng nhiều vòng lặp lồng nhau</h2>
+    <p>
+      Đôi khi chúng ta sử dụng nhiều vòng lặp lồng nhau làm code trở nên rất khó
+      hiểu. Giải pháp là tách tất cả các vòng lặp ra thành các function riêng
+      biệt. Giả sử chúng ta có một mảng (array) chứa một mảng (firstArr), mảng
+      firstArr này lại chứa một mảng khác (secondArr), và chúng ta muốn lấy ra
+      phần tử của mảng trong cùng (secondArr). Để xử lý yêu cầu này, thông
+      thường chúng ta hay viết các vòng lặp lồng nhau, nhưng đây không phải là
+      cách hay. Chúng ra có thể viết một function để giải quyết vấn đề, và
+      function này gọn gàng hơn, ít lặp code hơn, dễ đọc hơn và có thể tái sử
+      dụng.
+    </p>
+    <h2>3. Không phụ thuộc vào comments</h2>
+    <p>
+      Comments giúp các lập trình viên khác làm việc trong cùng một dự án sau
+      này hiểu code nhanh hơn, dễ dàng hơn. Tuy nhiên, nếu code cần đến comments
+      thì có thể là do bản thân code chưa đủ rõ ràng, dễ hiểu. Dưới đây là một
+      câu nói nổi tiếng về việc viết comments của Jeff Atwood:
+    </p>
+    <p>
+      <i
+        >“Comments vốn dĩ không phải là xấu, nhưng cũng không hẳn là tốt, đôi
+        khi người viết code bị phụ thuộc vào comments. Bản thân bạn phải luôn tự
+        ý thức viết code của mình như thể không có comments. Chính vì vậy, hãy
+        viết code theo cách đơn giản nhất, dễ hiểu nhất, rõ ràng nhất có thể”. —
+        Jeff Atwood</i
+      >
+    </p>
+    <p>
+      Nhìn chung, code có comments là tốt, nhưng chính bản thân code của bạn cần
+      phải dễ hiểu, dễ giải thích kể cả khi không có comment.
+    </p>
+    <h2>4. Tránh viết function quá dài</h2>
+    <p>
+      Khi một function hoặc một class (lớp) quá dài, thì nên tách thành nhiều
+      phần. Điều này sẽ làm cho code của chúng ta clean hơn, dễ hiểu hơn và có
+      thể tái sử dụng.
+    </p>
+
+    <p>
+      Giả sử chúng ta cần cộng và trừ hai số. Thông thường chúng ta có thể dùng
+      một function duy nhất, nhưng cách tốt nhất là nên chia thành hai function.
+      Khi viết các function riêng lẻ, chúng ta có thể tái sử dụng chúng trong
+      toàn bộ ứng dụng.
+    </p>
+    <h2>5. Tránh lặp code</h2>
+    <p>
+      Lặp code có nghĩa là một khối code được sử dụng trong code của bạn nhiều
+      hơn một lần. Điều này có nghĩa là phần code đó của bạn nên được viết thành
+      một function.
+    </p>
+    <p>
+      Lấy từ ví dụ ở trên (Mục 2: Tránh dùng nhiều vòng lặp lồng nhau). Nhìn vào
+      phần Bad practice: Chúng ta đã lặp lại khối code tương tự nhau ba lần.
+      Cách tối ưu hơn là viết một function có chức năng tương đương, và function
+      đó có thể tái sử dụng.
+    </p>
+    <h2>6. Đặt tên biến theo chuẩn Camel Case</h2>
+    <p>
+      Camel Case là quy tắc đặt tên cho cả biến, function, cũng như các định
+      danh khác. Theo quy tắc Camel Case, tên phải bắt đầu bằng một chữ cái viết
+      thường và tất cả các chữ cái đầu tiên của những từ tiếp theo sẽ được viết
+      hoa.
+    </p>
+    <h2>7. Đặt tên có ý nghĩa</h2>
+    <p>
+      Đặt tên có ý nghĩa là một trong những quy ước quan trọng nhất. Luôn sử
+      dụng tên có ý nghĩa cho các biến, function và các tên khác. Hãy chọn một
+      cái tên thể hiện ý nghĩa mục đích của bạn.
+    </p>
+    <p>
+      Nếu chúng ta cần một function lấy thông tin ngân hàng của người dùng, thì
+      chúng ta không nên sử dụng tên như getUserInfo hoặc kiểu tên tương tự.
+      Chúng ta nên sử dụng tên getUserBankInfo thì sẽ cụ thể hơn.
+    </p>
+    <h2>8. Ưu tiên mô tả chi tiết hơn ngắn gọn</h2>
+    <p>
+      Nếu có thể, bạn nên đặt tên ngắn gọn. Tuy nhiên trong trường hợp bạn không
+      chắc cách đặt tên ngắn gọn có thể hiện đủ ý nghĩa hay không, và bạn thấy
+      khó khăn trong việc tìm ra cụm hai, ba từ để đặt tên, thì tốt hơn hết là
+      nên ưu tiên mô tả chi tiết.
+    </p>
+    <p>
+      Giả sử chúng ta cần đặt tên cho một function để tìm một người dùng thông
+      qua số điện thoại hoặc email của họ. Chúng ta phải chọn một cái tên chi
+      tiết, có ý nghĩa và thể hiện được mục đích của function một cách ngắn gọn.
+    </p>
+    <h2>9. Sử dụng các động từ nhất quán cho mỗi khái niệm</h2>
+    <p>
+      Function thường được sử dụng để thực hiện hành động, ví dụ như đọc, xóa,
+      tạo mới, chỉnh sửa thứ gì đó. Vì vậy, tên function nên là một cụm động từ,
+      và hãy chắc chắn rằng bạn sử dụng một động từ nhất quán cho cùng một hành
+      động.
+    </p>
+    <p>
+      Nếu chúng ta cần một function CRUD, chúng ta có thể đặt tên chứa động từ
+      create, read, update hoặc delete.
+    </p>
+    <p>
+      Nếu chúng ta cần lấy thông tin người dùng từ cơ sở dữ liệu, thì không nên
+      đặt tên function là userInfo, user,... Chúng ta nên sử dụng tên
+      getUserInfo.
+    </p>
+    <p>
+      Giả sử bạn muốn viết các function tìm thông tin email, tìm số điện thoại
+      của người dùng, bạn không nên đặt tên function là getUserEmail,
+      retrieveUserPhone (thực hiện cùng một hành động nhưng sử dụng động từ
+      không nhất quán). Hãy đặt là getUserEmail, getUserPhone (sử dụng 1 động từ
+      get nhất quán).
+    </p>
+    <h2>10. Đặt tên biến Boolean cụ thể hơn trong câu lệnh if-then</h2>
+    <p>
+      Giả sử, bạn muốn kiểm tra các đặc điểm của một chiếc ô tô xem nó có phải
+      là sedan hay không, đã được bán ra chưa, có phải màu xanh không, có túi
+      khí không: sedan, sold, green, airbag.
+    </p>
+    <p>
+      Viết như vậy sẽ cụ thể hơn, tự nhiên hơn và làm cho chương trình dễ giải
+      mã hơn.
+    </p>
+    <h2>
+      11. Sử dụng danh từ khi đặt tên class (lớp) và áp dụng quy tắc Pascal Case
+    </h2>
+    <p>
+      Class không thực hiện hành động, có thể hiểu class là khuôn mẫu để tạo ra
+      các đối tượng, vì vậy không nên sử dụng động từ trong tên class.
+    </p>
+    <p>
+      Ngoài ra, tên class nên áp dụng quy tắc Pascal Case (viết hoa tất cả các
+      chữ cái đầu tiên của mỗi từ). Camel case thường được sử dụng cho các đối
+      tượng.
+    </p>
+    <h2>12. Viết hoa các giá trị không đổi (Screaming Snake Case)</h2>
+    <p>Luôn sử dụng tên viết hoa đầy đủ cho các hằng số.</p>
+    <p>
+      Theo quy tắc Screaming Snake Case, tất cả các chữ cái trong một từ được
+      viết hoa và các từ phân tách nhau bằng một dấu gạch dưới.
+    </p>
+    <h2>13. Tránh đặt tên biến chỉ có một chữ cái</h2>
+    <p>
+      Thực sự không nên đặt tên biến chỉ có một chữ cái. Tuy nhiên, trong một
+      function nhỏ, đối với vòng lặp, có thể chấp nhận tên biến có một chữ cái
+      cho index.
+    </p>
+    <p>
+      Tuân theo những quy ước này về lâu dài sẽ rất có lợi cho bạn. Khi bạn viết
+      code theo những quy ước trên, thì cho dù là ai tiếp nhận code sau này, họ
+      sẽ nhanh chóng hiểu được code của bạn, và có thể tiếp tục thêm các chức
+      năng mới một cách dễ dàng. Clean code là cần thiết cho cả cá nhân và nhóm.
+    </p>
+    <p>Tham khảo:</p>
+    <a
+      href="https://betterprogramming.pub/12-conventions-for-writing-clean-code-e16c51e3939a"
+      >12 Conventions for Writing Clean Code</a
+    ></p>
+    <p>
+    <a href="https://www.youtube.com/watch?v=RMN_bkZ1KM0"
+      >JavaScript Best Practices and Coding Conventions</a
+    ></p>
+    <h2>Bình luận</h2>
+    <p><i>*Vui lòng đăng nhập trước khi bình luận</i></p>
+
+    <a href="https://techmaster.vn/posts/36509/13-quy-uoc-can-thiet-de-viet-clean-code">Link bài gốc</a>
+  </body>
+</html>
